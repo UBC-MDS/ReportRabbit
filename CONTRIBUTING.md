@@ -1,7 +1,7 @@
 # Contributing to ReportRabbit 🐇📊
 
 Thank you for your interest in contributing to **ReportRabbit**!  
-We welcome contributions of all kinds—bug reports, feature ideas, code, and documentation.  
+We welcome contributions of all kinds: bug reports, feature ideas, code, and documentation.  
 Every contribution helps make ReportRabbit more reliable, expressive, and useful for the data science community.
 
 This document outlines how to contribute effectively and respectfully.
@@ -108,8 +108,8 @@ To set up **ReportRabbit** for local development:
 
 Contributions should follow these conventions:
 
-- Follow **PEP 8** for Python code style and formatting
-- Use **NumPy-style docstrings** for all public functions and modules
+- Follow **[PEP 8](https://peps.python.org/pep-0008/)** for Python code style and formatting
+- Use **[NumPy-style docstrings](https://numpydoc.readthedocs.io/en/latest/format.html)** for all public functions and modules
 - Write clear, maintainable, and well-documented code
 - Prefer explicit, readable implementations over clever or opaque solutions
 - Keep functions focused, modular, and testable

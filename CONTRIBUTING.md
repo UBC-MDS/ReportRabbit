@@ -1,55 +1,91 @@
-# Contributing
+# Contributing to ReportRabbit 🐇📊
 
-Contributions are welcome, and they are greatly appreciated! Every little bit
-helps, and credit will always be given.
+Thank you for your interest in contributing to **ReportRabbit**!  
+We welcome contributions of all kinds—bug reports, feature ideas, code, and documentation.  
+Every contribution helps make ReportRabbit more reliable, expressive, and useful for the data science community.
 
-## Types of Contributions
+This document outlines how to contribute effectively and respectfully.
 
-### Report Bugs
+## Collaboration Workflow
 
-If you are reporting a bug, please include:
+ReportRabbit follows a GitHub Flow–based collaboration model:
 
-* Your operating system name and version.
-* Any details about your local setup that might be helpful in troubleshooting.
-* Detailed steps to reproduce the bug.
+- All work is done on feature or fix branches created from `main`
+- Each issue corresponds to a single task or function
+- Issues are assigned to exactly one team member
+- Pull requests must be reviewed by at least one other team member before merging
+- No direct commits are made to `main`
+- GitHub issues and project boards are used for all project-related communication
 
-### Fix Bugs
+### Branch naming
 
-Look through the GitHub issues for bugs. Anything tagged with "bug" and "help
-wanted" is open to whoever wants to implement it.
+Create a new branch from `main` for each piece of work. Use consistent prefixes:
 
-### Implement Features
+- `feature/<short-description>` for new features
+- `fix/<short-description>` for bug fixes
+- `docs/<short-description>` for documentation-only changes
+- `test/<short-description>` for tests
+- `chore/<short-description>` for maintenance tasks
 
-Look through the GitHub issues for features. Anything tagged with "enhancement"
-and "help wanted" is open to whoever wants to implement it.
+Examples:
+- `feature/metrics-report`
+- `fix/mape-zero-division`
+- `docs/readme-usage`
+- `test/plot-report-tests`
+- `chore/ci-update`
 
-### Write Documentation
+## Ways to Contribute
 
-You can never have enough documentation! Please feel free to contribute to any
-part of the documentation, such as the official docs, docstrings, or even
-on the web in blog posts, articles, and such.
+### 🐞 Report Bugs
+If you encounter a bug, please open an issue and include:
 
-### Submit Feedback
+- Your operating system and version
+- Python version
+- ReportRabbit version
+- A minimal, reproducible example
+- Expected behavior vs. actual behavior
+- Any relevant error messages or stack traces
 
-If you are proposing a feature:
+Clear bug reports help us resolve issues faster.
 
-* Explain in detail how it would work.
-* Keep the scope as narrow as possible, to make it easier to implement.
-* Remember that this is a volunteer-driven project, and that contributions
-  are welcome :)
+### 🔧 Fix Bugs
+Browse open GitHub issues labeled **`bug`** or **`help wanted`**.  
+If you plan to work on an issue, please comment on it first to avoid duplication.
 
-## Get Started!
+### ✨ Implement Features
+We welcome feature contributions that align with ReportRabbit’s scope:
+**post-model reporting, evaluation, and interpretability**.
 
-Ready to contribute? Here's how to set up `reportrabbit` for local development.
+When proposing a feature:
+- Clearly describe the problem it solves
+- Keep the scope focused and incremental
+- Explain how it integrates with the existing API
+- Consider backward compatibility
 
-1. Download a copy of `reportrabbit` locally.
+### 📝 Improve Documentation
+Good documentation is as important as good code. Contributions may include:
+- Docstring improvements
+- README updates
+- Usage examples
+- Tutorials or explanatory guides
+- Diagrams or visuals that clarify workflows
 
-2. Create and activate a conda environment for `reportrabbit`:
+### 💬 Submit Feedback or Ideas
+Feature ideas and design feedback are welcome.  
+When submitting feedback:
+- Be specific and constructive
+- Provide context or examples where possible
+- Keep proposals concise and actionable
 
-    ```console
-    $ conda create -n reportrabbit python=3.12
-    $ conda activate reportrabbit
-    ```
+## Development Setup
+
+To set up **ReportRabbit** for local development:
+
+1. **Clone the repository**
+   ```console
+   git clone git@github.com:UBC-MDS/ReportRabbit.git
+   cd reportrabbit
+   ```
 
 3. Install `reportrabbit` using `poetry`:
 

@@ -5,10 +5,11 @@ A module that calculates the Mean Absolute Percentage Error (MAPE).
 def get_mape(y_true, y_pred):
     """
     Calculates the Mean Absolute Percentage Error (MAPE) and returns the result.
+
     MAPE measures the average absolute percentage difference between the 
     observed values and the predicted values.
 
-    Note: MAPE is undefined when any true value is zero.
+    Note: MAPE is undefined if any element of y_true is equal to zero, due to division by zero in the MAPE formula.
 
     Parameters
     ----------

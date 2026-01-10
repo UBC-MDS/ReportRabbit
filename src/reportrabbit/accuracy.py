@@ -6,7 +6,7 @@ def get_accuracy(y_true, y_pred):
 
     Accuracy is the proportion of correct predictions out of all predictions made.
     It represents the overall correctness of the model.
-    Scores are between 0 and 1m with a perfect accuracy being 1.
+    Scores are between 0 and 1 with a perfect accuracy being 1.
 
     Parameters
     ----------

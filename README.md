@@ -29,9 +29,9 @@ This package contains the following nine methods:
 
 -   `get_mse_rmse(y_true, y_pred, sample_weight=None)`: Returns both **Mean Squared Error (MSE)** and **Root Mean Squared Error (RMSE)** as `{"mse": float, "rmse": float}` in a single call for regression evaluation and supports optional `sample_weight` for weighted calculations.
 
--   `get_mae(y_true, y_pred)`: Returns the **Mean Absolute Error**...
+-   `get_mae(y_true, y_pred)`: Returns the **Mean Absolute Error**, the average absolute difference between the observed values and the predicted values.
 
--   `get_mape(y_true, y_pred)`: Returns the **Mean Absolute Percentage Error**...
+-   `get_mape(y_true, y_pred)`: Returns the **Mean Absolute Percentage Error**, the average absolute percentage difference between the observed values and the predicted values.
 
 ReportRabbit is a simplified version of the [sklearn.metrics](https://scikit-learn.org/stable/api/sklearn.metrics.html) package that prioritizes readability and ease of use.
 It is model-agnostic and can evaluate results of models from any framework.

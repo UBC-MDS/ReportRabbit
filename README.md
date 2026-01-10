@@ -27,9 +27,7 @@ This package contains the following nine methods:
 
 -   `get_r_square(y_true, y_pred)`: Returns the **Coefficient of determination (**$R^2$), the proportion of variance in Y explained by the linear model.
 
--   `get_rmse(y_true, y_pred)`: Returns the **Root Mean Squared Error**...
-
--   `get_mse(y_true, y_pred)`: Returns the **Mean Squared Error**...
+-   `get_mse_rmse(y_true, y_pred, sample_weight=None)`: Returns both **Mean Squared Error (MSE)** and **Root Mean Squared Error (RMSE)** as `{"mse": float, "rmse": float}` in a single call for regression evaluation and supports optional `sample_weight` for weighted calculations.
 
 -   `get_mae(y_true, y_pred)`: Returns the **Mean Absolute Error**...
 

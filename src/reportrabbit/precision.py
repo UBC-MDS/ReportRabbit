@@ -2,11 +2,11 @@
 
 def get_precision(y_true, y_pred):
     """
-    Calculates the precision of predictions.
-    and returns the result.
+    Calculates the precision of predictions and returns the result.
 
     Precision is the proportion of positive predictions that were correct.
     It answers: "Of all the items we predicted as positive, how many were actually positive?"
+    Scoring is between 0 and 1 with a perfect precision being 1. 
 
     Parameters
     ----------
@@ -32,6 +32,6 @@ def get_precision(y_true, y_pred):
     >>> y_true = [0, 1, 1, 0]
     >>> y_pred = [0, 1, 0, 0]
     >>> get_precision(y_true, y_pred)
-    1.0
+    0.75
     """
     pass

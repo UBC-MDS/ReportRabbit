@@ -52,6 +52,6 @@ def get_mse_rmse(y_true, y_pred, *, sample_weight=None):
     >>> y_true = np.array([1.0, 2.0, 3.0])
     >>> y_pred = np.array([1.5, 1.8, 2.2])
     >>> mr.get_mse_rmse(y_true, y_pred)
-    {'mse': 0.31..., 'rmse': 0.55...}
+    {'mse': 0.31, 'rmse': 0.556776436283}
     """
     pass

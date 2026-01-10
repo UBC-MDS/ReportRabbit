@@ -1,9 +1,3 @@
----
-editor_options: 
-  markdown: 
-    wrap: sentence
----
-
 # ReportRabbit
 
 ReportRabbit is a Python package that calculates model performance metrics.

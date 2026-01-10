@@ -2,8 +2,7 @@
 
 def get_recall(y_true, y_pred):
     """
-    Calculates the recall of predictions.
-    and returns the result.
+    Calculates the recall of predictions and returns the result.
 
     Recall is the proportion of actual positive cases that were correctly identified.
     It answers: "Of all the items that were actually positive, how many did we catch?"

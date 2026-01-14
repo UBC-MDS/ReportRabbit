@@ -1,7 +1,13 @@
 """
 A test module that tests the get_mse_rmse() and its helper functions,
 get_mse() and get_rmse().
-Note: these tests are written with the assistance of LLMs.
+
+Note: An initial draft of the tests was written by the author (Ruth Yankson).
+Subsequently, ChatGPT (OpenAI) was used to review the draft tests, suggest
+additional edge cases, and provide feedback on improving test coverage.
+All test code was critically evaluated, modified, and finalized by the author,
+who remains fully responsible for correctness, coverage,
+and adherence to best practices.
 """
 
 from reportrabbit.mse_rmse import get_mse, get_rmse, get_mse_rmse

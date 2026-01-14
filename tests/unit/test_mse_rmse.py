@@ -40,7 +40,7 @@ def test_helpers_perfect_prediction(func):
     """Test: helper functions return 0.0 for perfect prediction."""
     y_true = [1, 2, 3]
     y_pred = [1, 2, 3]
-    out = (func(y_true, y_pred),)
+    out = func(y_true, y_pred)
     assert np.isclose(out, 0.0)
 
 
@@ -66,7 +66,7 @@ def test_get_mse_rmse_with_weights():
     "func",
     [get_mse, get_rmse, get_mse_rmse],
 )
-def test_length_mismatch_raises_value_error(func, args):
+def test_length_mismatch_raises_value_error(func):
     """Test: ValueError raised when y_true and y_pred lengths differ."""
     y_true, y_pred = [1.1, 2.0, 0.3], [0.1, 0.2, 0.3, 0.4]
     with pytest.raises(ValueError):

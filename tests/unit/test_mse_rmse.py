@@ -9,94 +9,48 @@ import pytest
 import numpy as np
 
 
-def test_get_mse_basic():
-    """Test: Basic functionality of get_mse."""
-    y_true = [1, 2, 3]
-    y_pred = [1, 2, 3]
-    out = get_mse(y_true, y_pred)
-    expected_out = 0.0
-    assert out == expected_out, f"Expected {expected_out} but got {out}"
-
-
-def test_get_rmse_basic():
-    """Test: Basic functionality of get_rmse."""
-    y_true = [1, 2, 3]
-    y_pred = [1, 2, 3]
-    out = get_rmse(y_true, y_pred)
-    expected_out = 0.0
-    assert out == expected_out, f"Expected {expected_out} but got {out}"
-
-
-def test_get_mse_rmse_basic():
-    """Test: Basic functionality of get_mse_rmse."""
-    y_true = [1, 2, 3]
-    y_pred = [1, 2, 3]
+# ----------------------------
+# Test numeric behavior
+# ----------------------------
+@pytest.mark.parametrize(
+    "y_true,y_pred,expected_mse,expected_rmse",
+    [
+        ([1, 2, 3], [1, 2, 3], 0.0, 0.0),  # perfect prediction
+        (
+            np.array([1.0, 2.0, 3.0]),
+            np.array([1.5, 2.5, 3.5]),
+            0.25,
+            0.5,
+        ),  # numpy inputs
+        ([-1.0, 0.5, 2.0], [-0.5, -0.5, 1.0], 0.75, np.sqrt(0.75)),  # negative + floats
+    ],
+)
+def test_get_mse_rmse_outputs(y_true, y_pred, expected_mse, expected_rmse):
+    """Test: get_mse_rmse returns correct MSE and RMSE for valid numeric inputs."""
     out = get_mse_rmse(y_true, y_pred)
-    expected_out = {"mse": 0.0, "rmse": 0.0}
-    assert out == expected_out, f"Expected {expected_out} but got {out}"
+    assert np.isclose(out["mse"], expected_mse)
+    assert np.isclose(out["rmse"], expected_rmse)
 
 
-def test_get_mse_length_mismatch():
-    """Test: Ensure ValueError is raised when input lengths differ for get_mse."""
-    with pytest.raises(ValueError):
-        get_mse([1, 2], [1, 2, 3])
-
-
-def test_get_rmse_length_mismatch():
-    """Test: Ensure ValueError is raised when input lengths differ for get_rmse."""
-    with pytest.raises(ValueError):
-        get_rmse([1, 2], [1, 2, 3])
-
-
-def test_get_mse_rmse_length_mismatch():
-    """Test: Ensure ValueError is raised when input lengths differ for get_mse_rmse."""
-    with pytest.raises(ValueError):
-        get_mse_rmse([1, 2], [1, 2, 3])
-
-
-def test_get_mse_empty_list():
-    """Test: Edge case - Empty inputs for get_mse."""
-    with pytest.raises(ValueError):
-        get_mse([], [])
-
-
-def test_get_rmse_empty_list():
-    """Test: Edge case - Empty inputs for get_rmse."""
-    with pytest.raises(ValueError):
-        get_rmse([], [])
-
-
-def test_get_mse_rmse_empty_list():
-    """Test: Edge case - Empty inputs for get_mse_rmse."""
-    with pytest.raises(ValueError):
-        get_mse_rmse([], [])
-
-
-def test_get_mse_non_numeric():
-    """Test: Ensure ValueError is raised for non-numeric input for get_mse."""
-    with pytest.raises(ValueError):
-        get_mse([1, 2, "a"], [1, 2, 3])
-
-
-def test_get_rmse_non_numeric():
-    """Test: Ensure ValueError is raised for non-numeric input for get_rmse."""
-    with pytest.raises(ValueError):
-        get_rmse([1, 2, "a"], [1, 2, 3])
-
-
-def test_get_mse_rmse_non_numeric():
-    """Test: Ensure ValueError is raised for non-numeric input for get_mse_rmse."""
-    with pytest.raises(ValueError):
-        get_mse_rmse([1, 2, "a"], [1, 2, 3])
+@pytest.mark.parametrize(
+    "func",
+    [get_mse, get_rmse],
+)
+def test_helpers_perfect_prediction(func):
+    """Test: helper functions return 0.0 for perfect prediction."""
+    y_true = [1, 2, 3]
+    y_pred = [1, 2, 3]
+    out = (func(y_true, y_pred),)
+    assert np.isclose(out, 0.0)
 
 
 def test_get_mse_rmse_with_weights():
-    """Test: Functionality of get_mse_rmse with sample weights."""
+    """Test: get_mse_rmse supports sample weights using a weighted mean."""
     y_true = [1, 2, 3]
     y_pred = [1, 2, 4]
     sample_weight = [1, 1, 2]
     out = get_mse_rmse(y_true, y_pred, sample_weight=sample_weight)
-    expected_out = {"mse": 0.75, "rmse": np.sqrt(0.75)}
+    expected_out = {"mse": 0.5, "rmse": np.sqrt(0.5)}
     assert np.isclose(
         out["mse"], expected_out["mse"]
     ), f"Expected MSE {expected_out['mse']} but got {out['mse']}"
@@ -105,29 +59,44 @@ def test_get_mse_rmse_with_weights():
     ), f"Expected RMSE {expected_out['rmse']} but got {out['rmse']}"
 
 
-def test_get_mse_rmse_numpy_arrays():
-    """Test: Functionality of get_mse_rmse with NumPy array inputs."""
-    y_true = np.array([1.0, 2.0, 3.0])
-    y_pred = np.array([1.5, 2.5, 3.5])
-    out = get_mse_rmse(y_true, y_pred)
-    expected_out = {"mse": 0.25, "rmse": 0.5}
-    assert np.isclose(
-        out["mse"], expected_out["mse"]
-    ), f"Expected MSE {expected_out['mse']} but got {out['mse']}"
-    assert np.isclose(
-        out["rmse"], expected_out["rmse"]
-    ), f"Expected RMSE {expected_out['rmse']} but got {out['rmse']}"
+# ----------------------------
+# Validation / error handling
+# ----------------------------
+@pytest.mark.parametrize(
+    "func",
+    [get_mse, get_rmse, get_mse_rmse],
+)
+def test_length_mismatch_raises_value_error(func, args):
+    """Test: ValueError raised when y_true and y_pred lengths differ."""
+    y_true, y_pred = [1.1, 2.0, 0.3], [0.1, 0.2, 0.3, 0.4]
+    with pytest.raises(ValueError):
+        func(y_true, y_pred)
 
 
-def test_get_mse_rmse_negative_and_float_values():
-    """Test: Handles negative and floating-point values correctly."""
-    y_true = [-1.0, 0.5, 2.0]
-    y_pred = [-0.5, -0.5, 1.0]
-    out = get_mse_rmse(y_true, y_pred)
-    expected_out = {"mse": 0.75, "rmse": np.sqrt(0.75)}
-    assert np.isclose(
-        out["mse"], expected_out["mse"]
-    ), f"Expected MSE {expected_out['mse']} but got {out['mse']}"
-    assert np.isclose(
-        out["rmse"], expected_out["rmse"]
-    ), f"Expected RMSE {expected_out['rmse']} but got {out['rmse']}"
+def test_get_mse_rmse_weight_length_mismatch_raises_value_error():
+    """Test: ValueError raised when sample_weight length differs from y_true/y_pred."""
+    y_true = [1.0, 2.9, 3.4]
+    y_pred = [1.4, 0.2, 0.9]
+    sample_weight = [1, 2]  # Incorrect length
+    with pytest.raises(ValueError):
+        get_mse_rmse(y_true, y_pred, sample_weight=sample_weight)
+
+
+@pytest.mark.parametrize(
+    "func",
+    [get_mse, get_rmse, get_mse_rmse],
+)
+def test_empty_inputs_raises_value_error(func):
+    """Test: ValueError raised for empty inputs."""
+    with pytest.raises(ValueError):
+        func([], [])
+
+
+@pytest.mark.parametrize(
+    "func",
+    [get_mse, get_rmse, get_mse_rmse],
+)
+def test_non_numeric_inputs_raises_value_error(func):
+    """Test: ValueError raised when inputs contain non-numeric values."""
+    with pytest.raises(ValueError):
+        func([1, 2, "a"], [1, 2, 3])

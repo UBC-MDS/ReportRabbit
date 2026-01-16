@@ -1,6 +1,6 @@
 import pytest
 import numpy as np
-from f1 import get_f1
+from reportrabbit.f1 import get_f1
 
 """
 This module provides test pytest test-cases for the get_f1 function.

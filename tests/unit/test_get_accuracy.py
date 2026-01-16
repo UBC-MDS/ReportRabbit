@@ -1,6 +1,6 @@
 import pytest
 import numpy as np
-from accuracy import get_accuracy
+from reportrabbit.accuracy import get_accuracy
 
 """
 This module provides test pytest test-cases for the get_accuracy function.

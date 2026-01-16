@@ -1,11 +1,14 @@
 """
 A test module that tests the get_r() function in the r.py file.
+Note: these tests are first written manually, and then validated and improved with the assitance of LLMs.
 """
 
 from reportrabbit.r import get_r
 import pytest
 import numpy as np
 
+# LLM helped me add the description comments for each test, 
+# and generated the testing helper data" 
 def test_get_r_type_error():
     """Test: Ensure TypeError is raised for non-array input."""
     with pytest.raises(TypeError):
@@ -35,7 +38,6 @@ def test_get_r_length_mismatch():
 
 def test_get_r_constant_input():
     """Test: Edge case - Zero variance (constant values)."""
-    # Correlation is undefined if one set of values is constant
     y_true = [1, 1, 1]
     y_pred = [1, 2, 3]
     out = get_r(y_true, y_pred)

@@ -118,6 +118,24 @@ If applicable:
 - Add or update unit and integration tests
 - Update documentation alongside code changes
 
+## Running Tests
+
+> Tip: Install in editable mode so tests run against your local changes:
+> ```bash
+> pip install -e .
+> ```
+
+Before opening a pull request, please run the test suite locally:
+
+```console
+pytest
+```
+
+To run a specific test file:
+```console
+pytest tests/unit/test_specific_module.py
+```
+
 ## Pull Request Guidelines
 
 Before you submit a pull request, check that it meets these guidelines:

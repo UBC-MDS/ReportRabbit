@@ -1,6 +1,6 @@
 import pytest
 import numpy as np
-from recall import get_recall
+from reportrabbit.recall import get_recall
 
 """
 This module provides test pytest test-cases for the get_recall function.

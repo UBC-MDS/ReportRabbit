@@ -1,6 +1,6 @@
 import pytest
 import numpy as np
-from precision import get_precision
+from reportrabbit.precision import get_precision
 
 """
 This module provides test pytest test-cases for the get_precision function.

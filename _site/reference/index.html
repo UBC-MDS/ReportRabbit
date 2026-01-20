@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>index</title>
+<title>index – ReportRabbit</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -39,13 +39,13 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-a14e3238c51140e99ccc48519b6ed9ce.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-d521dac1687b568bac4cd80e48eb8185.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
-  "location": "sidebar",
+  "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "start",
-  "type": "textbox",
+  "panel-placement": "end",
+  "type": "overlay",
   "limit": 50,
   "keyboard-shortcut": [
     "f",
@@ -72,10 +72,37 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../reference/_styles-quartodoc.css">
 </head>
 
-<body class="nav-sidebar floating fullcontent quarto-light">
+<body class="nav-sidebar floating nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">ReportRabbit</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../reference/index.html" aria-current="page"> 
+<span class="menu-text">Reference</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -84,21 +111,13 @@ ul.task-list li input[type="checkbox"] {
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../reference/index.html">Function reference</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
     </div>
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
@@ -110,7 +129,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Some functions</span></a>
+ <span class="menu-text">Functions</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -118,14 +137,68 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../reference/get_object.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">get_object</span></a>
+  <a href="../reference/get_accuracy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">get_accuracy</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../reference/preview.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">preview</span></a>
+  <a href="../reference/get_f1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">get_f1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../reference/get_precision.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">get_precision</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../reference/get_recall.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">get_recall</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../reference/get_mae.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">get_mae</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../reference/get_mape.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">get_mape</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../reference/get_mse.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">get_mse</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../reference/get_rmse.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">get_rmse</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../reference/get_mse_rmse.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">get_mse_rmse</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../reference/get_r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">get_r</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../reference/get_r2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">get_r2</span></a>
   </div>
 </li>
       </ul>
@@ -144,18 +217,54 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="function-reference" class="level1 doc doc-index">
 <h1 class="doc doc-index">Function reference</h1>
-<section id="some-functions" class="level2">
-<h2 class="anchored" data-anchor-id="some-functions">Some functions</h2>
-<p>Functions to inspect docstrings.</p>
+<section id="functions" class="level2">
+<h2 class="anchored" data-anchor-id="functions">Functions</h2>
+<p>Functions in ReportRabbit.</p>
 <table class="caption-top table">
 <tbody>
 <tr class="odd">
-<td><a href="../reference/get_object.html#quartodoc.get_object">get_object</a></td>
-<td>Fetch a griffe object.</td>
+<td><a href="../reference/get_accuracy.html#reportrabbit.get_accuracy">get_accuracy</a></td>
+<td>Calculates the accuracy of predictions and returns the result.</td>
 </tr>
 <tr class="even">
-<td><a href="../reference/preview.html#quartodoc.preview">preview</a></td>
-<td>Print a friendly representation of a griffe object (e.g.&nbsp;function, docstring)</td>
+<td><a href="../reference/get_f1.html#reportrabbit.get_f1">get_f1</a></td>
+<td>Calculates the F1 score of predictions and returns the result.</td>
+</tr>
+<tr class="odd">
+<td><a href="../reference/get_precision.html#reportrabbit.get_precision">get_precision</a></td>
+<td>Calculates the precision of predictions and returns the result.</td>
+</tr>
+<tr class="even">
+<td><a href="../reference/get_recall.html#reportrabbit.get_recall">get_recall</a></td>
+<td>Calculates the recall of predictions and returns the result.</td>
+</tr>
+<tr class="odd">
+<td><a href="../reference/get_mae.html#reportrabbit.get_mae">get_mae</a></td>
+<td>Calculates the Mean Absolute Error (MAE) and returns the result.</td>
+</tr>
+<tr class="even">
+<td><a href="../reference/get_mape.html#reportrabbit.get_mape">get_mape</a></td>
+<td>Calculates the Mean Absolute Percentage Error (MAPE) and returns the result.</td>
+</tr>
+<tr class="odd">
+<td><a href="../reference/get_mse.html#reportrabbit.get_mse">get_mse</a></td>
+<td>Compute Mean Squared Error (MSE).</td>
+</tr>
+<tr class="even">
+<td><a href="../reference/get_rmse.html#reportrabbit.get_rmse">get_rmse</a></td>
+<td>Compute Root Mean Squared Error (RMSE).</td>
+</tr>
+<tr class="odd">
+<td><a href="../reference/get_mse_rmse.html#reportrabbit.get_mse_rmse">get_mse_rmse</a></td>
+<td>Compute Mean Squared Error (MSE) and Root Mean Squared Error (RMSE).</td>
+</tr>
+<tr class="even">
+<td><a href="../reference/get_r.html#reportrabbit.get_r">get_r</a></td>
+<td>Calculates the Pearson correlation coefficient (R)</td>
+</tr>
+<tr class="odd">
+<td><a href="../reference/get_r2.html#reportrabbit.get_r2">get_r2</a></td>
+<td>Calculates the R^2 statistic (coefficient of determination)</td>
 </tr>
 </tbody>
 </table>

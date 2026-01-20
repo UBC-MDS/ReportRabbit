@@ -1,44 +1,98 @@
 [
   {
-    "objectID": "reference/index.html",
-    "href": "reference/index.html",
-    "title": "Function reference",
+    "objectID": "reference/get_accuracy.html",
+    "href": "reference/get_accuracy.html",
+    "title": "get_accuracy",
     "section": "",
-    "text": "Functions to inspect docstrings.\n\n\n\nget_object\nFetch a griffe object.\n\n\npreview\nPrint a friendly representation of a griffe object (e.g. function, docstring)",
+    "text": "get_accuracy(y_true, y_pred)\nCalculates the accuracy of predictions and returns the result. Accuracy is the proportion of correct predictions out of all predictions made. It represents the overall correctness of the model. Accuracy = (True Positives + True Negatives) / Total. Scores are between 0 and 1 with a perfect accuracy being 1.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ny_true\narray\nThe actual observed values (ground truth).\nrequired\n\n\ny_pred\narray\nThe model predicted values.\nrequired\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\nfloat\nThe calculated accuracy score, ranging from 0.0 to 1.0.\n\n\n\n\n\n\n&gt;&gt;&gt; # Perfect accuracy\n&gt;&gt;&gt; y_true = [0, 1, 1, 0]\n&gt;&gt;&gt; y_pred = [0, 1, 1, 0]\n&gt;&gt;&gt; get_accuracy(y_true, y_pred)\n1.0\n&gt;&gt;&gt; # Partial accuracy\n&gt;&gt;&gt; y_true = [0, 1, 1, 0]\n&gt;&gt;&gt; y_pred = [0, 1, 0, 0]\n&gt;&gt;&gt; get_accuracy(y_true, y_pred)\n0.75",
     "crumbs": [
-      "Function reference"
+      "Reference",
+      "Functions",
+      "get_accuracy"
     ]
   },
   {
-    "objectID": "reference/index.html#some-functions",
-    "href": "reference/index.html#some-functions",
-    "title": "Function reference",
+    "objectID": "reference/get_accuracy.html#parameters",
+    "href": "reference/get_accuracy.html#parameters",
+    "title": "get_accuracy",
     "section": "",
-    "text": "Functions to inspect docstrings.\n\n\n\nget_object\nFetch a griffe object.\n\n\npreview\nPrint a friendly representation of a griffe object (e.g. function, docstring)",
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\ny_true\narray\nThe actual observed values (ground truth).\nrequired\n\n\ny_pred\narray\nThe model predicted values.\nrequired",
     "crumbs": [
-      "Function reference"
+      "Reference",
+      "Functions",
+      "get_accuracy"
     ]
   },
   {
-    "objectID": "reference/preview.html",
-    "href": "reference/preview.html",
-    "title": "preview",
+    "objectID": "reference/get_accuracy.html#returns",
+    "href": "reference/get_accuracy.html#returns",
+    "title": "get_accuracy",
     "section": "",
-    "text": "preview(ast, max_depth=999, compact=False, as_string=False)\nPrint a friendly representation of a griffe object (e.g. function, docstring)\n\n\n&gt;&gt;&gt; from quartodoc import get_object\n&gt;&gt;&gt; obj = get_object(\"quartodoc\", \"get_object\")\n&gt;&gt;&gt; preview(obj.docstring.parsed)\n...\n&gt;&gt;&gt; preview(obj)\n...",
+    "text": "Name\nType\nDescription\n\n\n\n\n\nfloat\nThe calculated accuracy score, ranging from 0.0 to 1.0.",
     "crumbs": [
-      "Some functions",
-      "preview"
+      "Reference",
+      "Functions",
+      "get_accuracy"
     ]
   },
   {
-    "objectID": "reference/preview.html#examples",
-    "href": "reference/preview.html#examples",
-    "title": "preview",
+    "objectID": "reference/get_accuracy.html#examples",
+    "href": "reference/get_accuracy.html#examples",
+    "title": "get_accuracy",
     "section": "",
-    "text": "&gt;&gt;&gt; from quartodoc import get_object\n&gt;&gt;&gt; obj = get_object(\"quartodoc\", \"get_object\")\n&gt;&gt;&gt; preview(obj.docstring.parsed)\n...\n&gt;&gt;&gt; preview(obj)\n...",
+    "text": "&gt;&gt;&gt; # Perfect accuracy\n&gt;&gt;&gt; y_true = [0, 1, 1, 0]\n&gt;&gt;&gt; y_pred = [0, 1, 1, 0]\n&gt;&gt;&gt; get_accuracy(y_true, y_pred)\n1.0\n&gt;&gt;&gt; # Partial accuracy\n&gt;&gt;&gt; y_true = [0, 1, 1, 0]\n&gt;&gt;&gt; y_pred = [0, 1, 0, 0]\n&gt;&gt;&gt; get_accuracy(y_true, y_pred)\n0.75",
     "crumbs": [
-      "Some functions",
-      "preview"
+      "Reference",
+      "Functions",
+      "get_accuracy"
+    ]
+  },
+  {
+    "objectID": "reference/get_f1.html",
+    "href": "reference/get_f1.html",
+    "title": "get_f1",
+    "section": "",
+    "text": "get_f1(y_true, y_pred)\nCalculates the F1 score of predictions and returns the result. The F1 score is the harmonic mean of precision and recall. It provides a balanced measure between precision and recall, useful when you want to balance the trade-off between false positives and false negatives. F1 = 2 * ((Precision * Recall) / (Precision + Recall)). Scoring is between 0 and 1 with a perfect F1 score being 1.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ny_true\narray\nThe actual observed values (ground truth).\nrequired\n\n\ny_pred\narray\nThe model predicted values.\nrequired\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\nfloat\nThe calculated F1 score, ranging from 0.0 to 1.0.\n\n\n\n\n\n\n&gt;&gt;&gt; # Perfect F1 score\n&gt;&gt;&gt; y_true = [0, 1, 1, 0]\n&gt;&gt;&gt; y_pred = [0, 1, 1, 0]\n&gt;&gt;&gt; get_f1(y_true, y_pred)\n1.0\n&gt;&gt;&gt; # Partial F1 score\n&gt;&gt;&gt; y_true = [0, 1, 1, 0]\n&gt;&gt;&gt; y_pred = [0, 1, 0, 0]\n&gt;&gt;&gt; get_f1(y_true, y_pred)\n0.6666666666666666",
+    "crumbs": [
+      "Reference",
+      "Functions",
+      "get_f1"
+    ]
+  },
+  {
+    "objectID": "reference/get_f1.html#parameters",
+    "href": "reference/get_f1.html#parameters",
+    "title": "get_f1",
+    "section": "",
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\ny_true\narray\nThe actual observed values (ground truth).\nrequired\n\n\ny_pred\narray\nThe model predicted values.\nrequired",
+    "crumbs": [
+      "Reference",
+      "Functions",
+      "get_f1"
+    ]
+  },
+  {
+    "objectID": "reference/get_f1.html#returns",
+    "href": "reference/get_f1.html#returns",
+    "title": "get_f1",
+    "section": "",
+    "text": "Name\nType\nDescription\n\n\n\n\n\nfloat\nThe calculated F1 score, ranging from 0.0 to 1.0.",
+    "crumbs": [
+      "Reference",
+      "Functions",
+      "get_f1"
+    ]
+  },
+  {
+    "objectID": "reference/get_f1.html#examples",
+    "href": "reference/get_f1.html#examples",
+    "title": "get_f1",
+    "section": "",
+    "text": "&gt;&gt;&gt; # Perfect F1 score\n&gt;&gt;&gt; y_true = [0, 1, 1, 0]\n&gt;&gt;&gt; y_pred = [0, 1, 1, 0]\n&gt;&gt;&gt; get_f1(y_true, y_pred)\n1.0\n&gt;&gt;&gt; # Partial F1 score\n&gt;&gt;&gt; y_true = [0, 1, 1, 0]\n&gt;&gt;&gt; y_pred = [0, 1, 0, 0]\n&gt;&gt;&gt; get_f1(y_true, y_pred)\n0.6666666666666666",
+    "crumbs": [
+      "Reference",
+      "Functions",
+      "get_f1"
     ]
   },
   {
@@ -175,58 +229,503 @@
     "text": "Code of Conduct: DSCI 524: Group 11\n\n\nIntroduction\nOur team is dedicated to fostering a collaborative, inclusive, and respectful environment where ideas can be shared openly and learning is encouraged. All participants, whether contributing through discussions, code, documentation, or reviews are expected to support a positive and constructive atmosphere.\nThis Code of Conduct applies to all project-related interactions.\n\n\nCommitment to Diversity and Inclusion\nOur project is open to people of all backgrounds, regardless of age, gender identity or expression, sexual orientation, disability, physical appearance, body size, ethnicity, nationality, race, religion, education, or any other personal characteristic. We are committed to creating an environment where everyone feels respected, valued, and comfortable contributing without fear of discrimination or exclusion.\n\n\nExpected Behaviour\nAll members of this project community are expected to act with professionalism, integrity, and openness. This includes: - Communicating with respect and consideration at all times - Being open to others’ perspectives and acknowledging their contributions - Offering and accepting feedback in a constructive and professional way - Participating in discussions that encourage teamwork and shared understanding\n\n\nInappropriate Behavior\n\nAny form of harassment toward participants\nIntentional intimidation, stalking, or persistent following\nThreatening or violent language directed at others\nSharing or displaying offensive, explicit, or inappropriate content\nUse of slurs, excessive profanity, or aggressive and hostile language\n\nAll members are expected to refrain from all forms of unacceptable conduct to maintain a respectful environment.\n\n\nConsequences for Unacceptable Behavior\nIf a participant engages in inappropriate behavior, they will be asked to stop and comply immediately. If the behavior persists or the issue is severe, it may be referred to the teaching team or course faculty. Ongoing violations may lead to removal from the project.\n\n\nReporting Concerns and Guidelines\nIf a participant violates this Code of Conduct, the incident may be reported by contacting Raghav Gupta at raghav90@student.ubc.ca. All reports will be treated seriously and handled with discretion. The Group 11 team will review the situation and take actions it considers appropriate given the circumstances.\nAdaptation Notes: Adapted from the Python Community Code of Conduct (https://policies.python.org/python.org/code-of-conduct/) and the UBC MDS 522 course."
   },
   {
-    "objectID": "reference/get_object.html",
-    "href": "reference/get_object.html",
-    "title": "get_object",
+    "objectID": "reference/index.html",
+    "href": "reference/index.html",
+    "title": "Function reference",
     "section": "",
-    "text": "get_object(\n    path,\n    object_name=None,\n    parser='numpy',\n    load_aliases=True,\n    dynamic=False,\n    loader=None,\n)\nFetch a griffe object.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\npath\nstr\nAn import path to the object. This should have the form path.to.module:object. For example, quartodoc:get_object or quartodoc:MdRenderer.render.\nrequired\n\n\nobject_name\n'str | None'\n(Deprecated). A function name.\nNone\n\n\nparser\nstr\nA docstring parser to use.\n'numpy'\n\n\nload_aliases\n\nFor aliases that were imported from other modules, should we load that module?\nTrue\n\n\ndynamic\n\nWhether to dynamically import object. Useful if docstring is not hard-coded, but was set on object by running python code.\nFalse\n\n\n\n\n\n\npreview: print a user-friendly preview of a griffe object.\n\n\n\n&gt;&gt;&gt; get_function(\"quartodoc\", \"get_function\")\n&lt;Function('get_function', ...\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\nx\ndc.Object\nabc",
+    "text": "Functions in ReportRabbit.\n\n\n\nget_accuracy\nCalculates the accuracy of predictions and returns the result.\n\n\nget_f1\nCalculates the F1 score of predictions and returns the result.\n\n\nget_precision\nCalculates the precision of predictions and returns the result.\n\n\nget_recall\nCalculates the recall of predictions and returns the result.\n\n\nget_mae\nCalculates the Mean Absolute Error (MAE) and returns the result.\n\n\nget_mape\nCalculates the Mean Absolute Percentage Error (MAPE) and returns the result.\n\n\nget_mse\nCompute Mean Squared Error (MSE).\n\n\nget_rmse\nCompute Root Mean Squared Error (RMSE).\n\n\nget_mse_rmse\nCompute Mean Squared Error (MSE) and Root Mean Squared Error (RMSE).\n\n\nget_r\nCalculates the Pearson correlation coefficient (R)\n\n\nget_r2\nCalculates the R^2 statistic (coefficient of determination)",
     "crumbs": [
-      "Some functions",
-      "get_object"
+      "Reference",
+      "Function reference"
     ]
   },
   {
-    "objectID": "reference/get_object.html#parameters",
-    "href": "reference/get_object.html#parameters",
-    "title": "get_object",
+    "objectID": "reference/index.html#some-functions",
+    "href": "reference/index.html#some-functions",
+    "title": "Function reference",
     "section": "",
-    "text": "Name\nType\nDescription\nDefault\n\n\n\n\npath\nstr\nAn import path to the object. This should have the form path.to.module:object. For example, quartodoc:get_object or quartodoc:MdRenderer.render.\nrequired\n\n\nobject_name\n'str | None'\n(Deprecated). A function name.\nNone\n\n\nparser\nstr\nA docstring parser to use.\n'numpy'\n\n\nload_aliases\n\nFor aliases that were imported from other modules, should we load that module?\nTrue\n\n\ndynamic\n\nWhether to dynamically import object. Useful if docstring is not hard-coded, but was set on object by running python code.\nFalse",
+    "text": "Functions to inspect docstrings.\n\n\n\nget_accuracy\nCalculates the accuracy of predictions and returns the result.\n\n\nget_f1\nCalculates the F1 score of predictions and returns the result.",
     "crumbs": [
-      "Some functions",
-      "get_object"
+      "Reference",
+      "Function reference"
     ]
   },
   {
-    "objectID": "reference/get_object.html#see-also",
-    "href": "reference/get_object.html#see-also",
-    "title": "get_object",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "ReportRabbit",
     "section": "",
-    "text": "preview: print a user-friendly preview of a griffe object.",
+    "text": "Welcome to ReportRabbit!"
+  },
+  {
+    "objectID": "index.html#contributors",
+    "href": "index.html#contributors",
+    "title": "Welcome to ReportRabbit!",
+    "section": "Contributors",
+    "text": "Contributors\nRaghav Gupta, Joel Peterson, Jennifer Tsang, and Ruth Adwowa Yankson"
+  },
+  {
+    "objectID": "index.html#installation",
+    "href": "index.html#installation",
+    "title": "Welcome to ReportRabbit!",
+    "section": "Installation",
+    "text": "Installation\n$ pip install reportrabbit"
+  },
+  {
+    "objectID": "index.html#contributing",
+    "href": "index.html#contributing",
+    "title": "Welcome to ReportRabbit!",
+    "section": "Contributing",
+    "text": "Contributing\nInterested in contributing? Check out the contributing guidelines here. Please note that this project is released with a Code of Conduct. By contributing to this project, you agree to abide by its terms."
+  },
+  {
+    "objectID": "index.html#license",
+    "href": "index.html#license",
+    "title": "Welcome to ReportRabbit!",
+    "section": "License",
+    "text": "License\nIt is licensed under the terms of the MIT license."
+  },
+  {
+    "objectID": "reference/get_mse_rmse.html",
+    "href": "reference/get_mse_rmse.html",
+    "title": "get_mse_rmse",
+    "section": "",
+    "text": "get_mse_rmse(y_true, y_pred, *, sample_weight=None)\nCompute Mean Squared Error (MSE) and Root Mean Squared Error (RMSE).\nThis function is a convenience wrapper that returns both Mean Squared Error (MSE) and Root Mean Squared Error (RMSE) in a single call for streamlined regression model evaluation.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ny_true\narray-like of shape (n_samples,)\nTrue target values (e.g., list, NumPy array, or pandas Series).\nrequired\n\n\ny_pred\narray-like of shape (n_samples,)\nPredicted target values (same shape as y_true).\nrequired\n\n\nsample_weight\narray-like of shape (n_samples,)\nSample weights (e.g., list, NumPy array, or pandas Series). If provided, errors are aggregated using a weighted mean.\nNone\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\nmetrics\ndict\nDictionary with: - \"mse\" : float Mean Squared Error computed as the mean of squared residuals. - \"rmse\" : float Root Mean Squared Error computed as the square root of MSE.\n\n\n\n\n\n\n\nMSE is defined as: mean((y_true - y_pred)**2).\nRMSE is defined as: sqrt(MSE).\nInputs are expected to be one-dimensional (1D) and of equal length.\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\nValueError\nIf y_true and y_pred have different lengths, are empty, or cannot be converted into compatible numeric arrays.\n\n\n\n\n\n\n&gt;&gt;&gt; from reportrabbit import mse_rmse as mr\n&gt;&gt;&gt; y_true = [3.0, -0.5, 2.0, 7.0]\n&gt;&gt;&gt; y_pred = [2.5, 0.0, 2.0, 8.0]\n&gt;&gt;&gt; mr.get_mse_rmse(y_true, y_pred)\n{'mse': 0.375, 'rmse': 0.6123724357}\nUsing NumPy arrays:\n&gt;&gt;&gt; import numpy as np\n&gt;&gt;&gt; y_true = np.array([1.0, 2.0, 3.0])\n&gt;&gt;&gt; y_pred = np.array([1.5, 1.8, 2.2])\n&gt;&gt;&gt; mr.get_mse_rmse(y_true, y_pred)\n{'mse': 0.31, 'rmse': 0.556776436283}",
     "crumbs": [
-      "Some functions",
-      "get_object"
+      "Reference",
+      "Functions",
+      "get_mse_rmse"
     ]
   },
   {
-    "objectID": "reference/get_object.html#examples",
-    "href": "reference/get_object.html#examples",
-    "title": "get_object",
+    "objectID": "reference/get_mse_rmse.html#parameters",
+    "href": "reference/get_mse_rmse.html#parameters",
+    "title": "get_mse_rmse",
     "section": "",
-    "text": "&gt;&gt;&gt; get_function(\"quartodoc\", \"get_function\")\n&lt;Function('get_function', ...",
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\ny_true\narray-like of shape (n_samples,)\nTrue target values (e.g., list, NumPy array, or pandas Series).\nrequired\n\n\ny_pred\narray-like of shape (n_samples,)\nPredicted target values (same shape as y_true).\nrequired\n\n\nsample_weight\narray-like of shape (n_samples,)\nSample weights (e.g., list, NumPy array, or pandas Series). If provided, errors are aggregated using a weighted mean.\nNone",
     "crumbs": [
-      "Some functions",
-      "get_object"
+      "Reference",
+      "Functions",
+      "get_mse_rmse"
     ]
   },
   {
-    "objectID": "reference/get_object.html#returns",
-    "href": "reference/get_object.html#returns",
-    "title": "get_object",
+    "objectID": "reference/get_mse_rmse.html#returns",
+    "href": "reference/get_mse_rmse.html#returns",
+    "title": "get_mse_rmse",
     "section": "",
-    "text": "Name\nType\nDescription\n\n\n\n\nx\ndc.Object\nabc",
+    "text": "Name\nType\nDescription\n\n\n\n\nmetrics\ndict\nDictionary with: - \"mse\" : float Mean Squared Error computed as the mean of squared residuals. - \"rmse\" : float Root Mean Squared Error computed as the square root of MSE.",
     "crumbs": [
-      "Some functions",
-      "get_object"
+      "Reference",
+      "Functions",
+      "get_mse_rmse"
+    ]
+  },
+  {
+    "objectID": "reference/get_mse_rmse.html#notes",
+    "href": "reference/get_mse_rmse.html#notes",
+    "title": "get_mse_rmse",
+    "section": "",
+    "text": "MSE is defined as: mean((y_true - y_pred)**2).\nRMSE is defined as: sqrt(MSE).\nInputs are expected to be one-dimensional (1D) and of equal length.",
+    "crumbs": [
+      "Reference",
+      "Functions",
+      "get_mse_rmse"
+    ]
+  },
+  {
+    "objectID": "reference/get_mse_rmse.html#raises",
+    "href": "reference/get_mse_rmse.html#raises",
+    "title": "get_mse_rmse",
+    "section": "",
+    "text": "Name\nType\nDescription\n\n\n\n\n\nValueError\nIf y_true and y_pred have different lengths, are empty, or cannot be converted into compatible numeric arrays.",
+    "crumbs": [
+      "Reference",
+      "Functions",
+      "get_mse_rmse"
+    ]
+  },
+  {
+    "objectID": "reference/get_mse_rmse.html#examples",
+    "href": "reference/get_mse_rmse.html#examples",
+    "title": "get_mse_rmse",
+    "section": "",
+    "text": "&gt;&gt;&gt; from reportrabbit import mse_rmse as mr\n&gt;&gt;&gt; y_true = [3.0, -0.5, 2.0, 7.0]\n&gt;&gt;&gt; y_pred = [2.5, 0.0, 2.0, 8.0]\n&gt;&gt;&gt; mr.get_mse_rmse(y_true, y_pred)\n{'mse': 0.375, 'rmse': 0.6123724357}\nUsing NumPy arrays:\n&gt;&gt;&gt; import numpy as np\n&gt;&gt;&gt; y_true = np.array([1.0, 2.0, 3.0])\n&gt;&gt;&gt; y_pred = np.array([1.5, 1.8, 2.2])\n&gt;&gt;&gt; mr.get_mse_rmse(y_true, y_pred)\n{'mse': 0.31, 'rmse': 0.556776436283}",
+    "crumbs": [
+      "Reference",
+      "Functions",
+      "get_mse_rmse"
+    ]
+  },
+  {
+    "objectID": "reference/get_mse.html",
+    "href": "reference/get_mse.html",
+    "title": "get_mse",
+    "section": "",
+    "text": "get_mse(y_true, y_pred, *, sample_weight=None)\nCompute Mean Squared Error (MSE).\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ny_true\narray-like of shape (n_samples,)\nTrue target values.\nrequired\n\n\ny_pred\narray-like of shape (n_samples,)\nPredicted target values.\nrequired\n\n\nsample_weight\narray-like of shape (n_samples,)\nSample weights.\nNone\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\nmse\nfloat\nMean Squared Error.",
+    "crumbs": [
+      "Reference",
+      "Functions",
+      "get_mse"
+    ]
+  },
+  {
+    "objectID": "reference/get_mse.html#parameters",
+    "href": "reference/get_mse.html#parameters",
+    "title": "get_mse",
+    "section": "",
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\ny_true\narray-like of shape (n_samples,)\nTrue target values.\nrequired\n\n\ny_pred\narray-like of shape (n_samples,)\nPredicted target values.\nrequired\n\n\nsample_weight\narray-like of shape (n_samples,)\nSample weights.\nNone",
+    "crumbs": [
+      "Reference",
+      "Functions",
+      "get_mse"
+    ]
+  },
+  {
+    "objectID": "reference/get_mse.html#returns",
+    "href": "reference/get_mse.html#returns",
+    "title": "get_mse",
+    "section": "",
+    "text": "Name\nType\nDescription\n\n\n\n\nmse\nfloat\nMean Squared Error.",
+    "crumbs": [
+      "Reference",
+      "Functions",
+      "get_mse"
+    ]
+  },
+  {
+    "objectID": "reference/get_recall.html",
+    "href": "reference/get_recall.html",
+    "title": "get_recall",
+    "section": "",
+    "text": "get_recall(y_true, y_pred)\nCalculates the recall of predictions and returns the result. Recall is the proportion of actual positive cases that were correctly identified. It answers: “Of all the items that were actually positive, how many did we catch?” Recall = True Positives / (True Positives + False Negatives). Scoring is between 0 and 1 with a perfect recall being 1.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ny_true\narray\nThe actual observed values (ground truth).\nrequired\n\n\ny_pred\narray\nThe model predicted values.\nrequired\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\nfloat\nThe calculated recall score, ranging from 0.0 to 1.0.\n\n\n\n\n\n\n&gt;&gt;&gt; # Perfect recall\n&gt;&gt;&gt; y_true = [0, 1, 1, 0]\n&gt;&gt;&gt; y_pred = [0, 1, 1, 0]\n&gt;&gt;&gt; get_recall(y_true, y_pred)\n1.0\n&gt;&gt;&gt; # Partial recall\n&gt;&gt;&gt; y_true = [0, 1, 1, 0]\n&gt;&gt;&gt; y_pred = [0, 1, 0, 0]\n&gt;&gt;&gt; get_recall(y_true, y_pred)\n0.5",
+    "crumbs": [
+      "Reference",
+      "Functions",
+      "get_recall"
+    ]
+  },
+  {
+    "objectID": "reference/get_recall.html#parameters",
+    "href": "reference/get_recall.html#parameters",
+    "title": "get_recall",
+    "section": "",
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\ny_true\narray\nThe actual observed values (ground truth).\nrequired\n\n\ny_pred\narray\nThe model predicted values.\nrequired",
+    "crumbs": [
+      "Reference",
+      "Functions",
+      "get_recall"
+    ]
+  },
+  {
+    "objectID": "reference/get_recall.html#returns",
+    "href": "reference/get_recall.html#returns",
+    "title": "get_recall",
+    "section": "",
+    "text": "Name\nType\nDescription\n\n\n\n\n\nfloat\nThe calculated recall score, ranging from 0.0 to 1.0.",
+    "crumbs": [
+      "Reference",
+      "Functions",
+      "get_recall"
+    ]
+  },
+  {
+    "objectID": "reference/get_recall.html#examples",
+    "href": "reference/get_recall.html#examples",
+    "title": "get_recall",
+    "section": "",
+    "text": "&gt;&gt;&gt; # Perfect recall\n&gt;&gt;&gt; y_true = [0, 1, 1, 0]\n&gt;&gt;&gt; y_pred = [0, 1, 1, 0]\n&gt;&gt;&gt; get_recall(y_true, y_pred)\n1.0\n&gt;&gt;&gt; # Partial recall\n&gt;&gt;&gt; y_true = [0, 1, 1, 0]\n&gt;&gt;&gt; y_pred = [0, 1, 0, 0]\n&gt;&gt;&gt; get_recall(y_true, y_pred)\n0.5",
+    "crumbs": [
+      "Reference",
+      "Functions",
+      "get_recall"
+    ]
+  },
+  {
+    "objectID": "reference/get_mae.html",
+    "href": "reference/get_mae.html",
+    "title": "get_mae",
+    "section": "",
+    "text": "get_mae(y_true, y_pred)\nCalculates the Mean Absolute Error (MAE) and returns the result.\nMAE measures the average absolute difference between the observed values and the predicted values.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ny_true\narray\nThe actual observed values (ground truth).\nrequired\n\n\ny_pred\narray\nThe model predicted values.\nrequired\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\nfloat\nThe calculated Mean Absolute Error.\n\n\n\n\n\n\n&gt;&gt;&gt; y_true = [1.0, 2.0, 3.0]\n&gt;&gt;&gt; y_pred = [2.0, 2.0, 4.0]\n&gt;&gt;&gt; get_mae(y_true, y_pred)\n0.6666666666666666",
+    "crumbs": [
+      "Reference",
+      "Functions",
+      "get_mae"
+    ]
+  },
+  {
+    "objectID": "reference/get_mae.html#parameters",
+    "href": "reference/get_mae.html#parameters",
+    "title": "get_mae",
+    "section": "",
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\ny_true\narray\nThe actual observed values (ground truth).\nrequired\n\n\ny_pred\narray\nThe model predicted values.\nrequired",
+    "crumbs": [
+      "Reference",
+      "Functions",
+      "get_mae"
+    ]
+  },
+  {
+    "objectID": "reference/get_mae.html#returns",
+    "href": "reference/get_mae.html#returns",
+    "title": "get_mae",
+    "section": "",
+    "text": "Name\nType\nDescription\n\n\n\n\n\nfloat\nThe calculated Mean Absolute Error.",
+    "crumbs": [
+      "Reference",
+      "Functions",
+      "get_mae"
+    ]
+  },
+  {
+    "objectID": "reference/get_mae.html#examples",
+    "href": "reference/get_mae.html#examples",
+    "title": "get_mae",
+    "section": "",
+    "text": "&gt;&gt;&gt; y_true = [1.0, 2.0, 3.0]\n&gt;&gt;&gt; y_pred = [2.0, 2.0, 4.0]\n&gt;&gt;&gt; get_mae(y_true, y_pred)\n0.6666666666666666",
+    "crumbs": [
+      "Reference",
+      "Functions",
+      "get_mae"
+    ]
+  },
+  {
+    "objectID": "reference/get_r2.html",
+    "href": "reference/get_r2.html",
+    "title": "get_r2",
+    "section": "",
+    "text": "get_r2(y_true, y_pred)\nCalculates the R^2 statistic (coefficient of determination) and return the result.\nThe R^2 statistics meansures the proportion of variability in Y (the response) that is explained by the linear model.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ny_true\narray or list\nThe actual observed values (ground truth).\nrequired\n\n\ny_pred\narray or list\nThe model predicted values.\nrequired\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\nfloat\nThe calculated R^2 statistic.\n\n\n\n\n\n\n&gt;&gt;&gt; y_true = [1.0, 2.0, 3.0]\n&gt;&gt;&gt; y_pred = [1.0, 2.0, 3.0]\n&gt;&gt;&gt; get_r2(y_true, y_pred)\n1.0",
+    "crumbs": [
+      "Reference",
+      "Functions",
+      "get_r2"
+    ]
+  },
+  {
+    "objectID": "reference/get_r2.html#parameters",
+    "href": "reference/get_r2.html#parameters",
+    "title": "get_r2",
+    "section": "",
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\ny_true\narray or list\nThe actual observed values (ground truth).\nrequired\n\n\ny_pred\narray or list\nThe model predicted values.\nrequired",
+    "crumbs": [
+      "Reference",
+      "Functions",
+      "get_r2"
+    ]
+  },
+  {
+    "objectID": "reference/get_r2.html#returns",
+    "href": "reference/get_r2.html#returns",
+    "title": "get_r2",
+    "section": "",
+    "text": "Name\nType\nDescription\n\n\n\n\n\nfloat\nThe calculated R^2 statistic.",
+    "crumbs": [
+      "Reference",
+      "Functions",
+      "get_r2"
+    ]
+  },
+  {
+    "objectID": "reference/get_r2.html#examples",
+    "href": "reference/get_r2.html#examples",
+    "title": "get_r2",
+    "section": "",
+    "text": "&gt;&gt;&gt; y_true = [1.0, 2.0, 3.0]\n&gt;&gt;&gt; y_pred = [1.0, 2.0, 3.0]\n&gt;&gt;&gt; get_r2(y_true, y_pred)\n1.0",
+    "crumbs": [
+      "Reference",
+      "Functions",
+      "get_r2"
+    ]
+  },
+  {
+    "objectID": "reference/get_rmse.html",
+    "href": "reference/get_rmse.html",
+    "title": "get_rmse",
+    "section": "",
+    "text": "get_rmse(y_true, y_pred, *, sample_weight=None)\nCompute Root Mean Squared Error (RMSE).\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ny_true\narray-like of shape (n_samples,)\nTrue target values.\nrequired\n\n\ny_pred\narray-like of shape (n_samples,)\nPredicted target values.\nrequired\n\n\nsample_weight\narray-like of shape (n_samples,)\nSample weights.\nNone\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\nrmse\nfloat\nRoot Mean Squared Error.",
+    "crumbs": [
+      "Reference",
+      "Functions",
+      "get_rmse"
+    ]
+  },
+  {
+    "objectID": "reference/get_rmse.html#parameters",
+    "href": "reference/get_rmse.html#parameters",
+    "title": "get_rmse",
+    "section": "",
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\ny_true\narray-like of shape (n_samples,)\nTrue target values.\nrequired\n\n\ny_pred\narray-like of shape (n_samples,)\nPredicted target values.\nrequired\n\n\nsample_weight\narray-like of shape (n_samples,)\nSample weights.\nNone",
+    "crumbs": [
+      "Reference",
+      "Functions",
+      "get_rmse"
+    ]
+  },
+  {
+    "objectID": "reference/get_rmse.html#returns",
+    "href": "reference/get_rmse.html#returns",
+    "title": "get_rmse",
+    "section": "",
+    "text": "Name\nType\nDescription\n\n\n\n\nrmse\nfloat\nRoot Mean Squared Error.",
+    "crumbs": [
+      "Reference",
+      "Functions",
+      "get_rmse"
+    ]
+  },
+  {
+    "objectID": "reference/get_r.html",
+    "href": "reference/get_r.html",
+    "title": "get_r",
+    "section": "",
+    "text": "get_r(y_true, y_pred)\nCalculates the Pearson correlation coefficient (R) and returns the result.\nThe R value measures the strength and direction of the linear correlation between the true and predicted values.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ny_true\narray or list\nThe actual observed values (ground truth).\nrequired\n\n\ny_pred\narray or list\nThe model predicted values.\nrequired\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\nfloat\nThe calculated R value, ranging from -1.0 to 1.0.\n\n\n\n\n\n\n&gt;&gt;&gt; # Perfect positive correlation\n&gt;&gt;&gt; y_true = [1.0, 2.0, 3.0]\n&gt;&gt;&gt; y_pred = [1.0, 2.0, 3.0]\n&gt;&gt;&gt; get_r(y_true, y_pred)\n1.0\n&gt;&gt;&gt; # Perfect negative correlation\n&gt;&gt;&gt; y_true = [1.0, 2.0, 3.0]\n&gt;&gt;&gt; y_pred = [3.0, 2.0, 1.0]\n&gt;&gt;&gt; get_r(y_true, y_pred)\n-1.0",
+    "crumbs": [
+      "Reference",
+      "Functions",
+      "get_r"
+    ]
+  },
+  {
+    "objectID": "reference/get_r.html#parameters",
+    "href": "reference/get_r.html#parameters",
+    "title": "get_r",
+    "section": "",
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\ny_true\narray or list\nThe actual observed values (ground truth).\nrequired\n\n\ny_pred\narray or list\nThe model predicted values.\nrequired",
+    "crumbs": [
+      "Reference",
+      "Functions",
+      "get_r"
+    ]
+  },
+  {
+    "objectID": "reference/get_r.html#returns",
+    "href": "reference/get_r.html#returns",
+    "title": "get_r",
+    "section": "",
+    "text": "Name\nType\nDescription\n\n\n\n\n\nfloat\nThe calculated R value, ranging from -1.0 to 1.0.",
+    "crumbs": [
+      "Reference",
+      "Functions",
+      "get_r"
+    ]
+  },
+  {
+    "objectID": "reference/get_r.html#examples",
+    "href": "reference/get_r.html#examples",
+    "title": "get_r",
+    "section": "",
+    "text": "&gt;&gt;&gt; # Perfect positive correlation\n&gt;&gt;&gt; y_true = [1.0, 2.0, 3.0]\n&gt;&gt;&gt; y_pred = [1.0, 2.0, 3.0]\n&gt;&gt;&gt; get_r(y_true, y_pred)\n1.0\n&gt;&gt;&gt; # Perfect negative correlation\n&gt;&gt;&gt; y_true = [1.0, 2.0, 3.0]\n&gt;&gt;&gt; y_pred = [3.0, 2.0, 1.0]\n&gt;&gt;&gt; get_r(y_true, y_pred)\n-1.0",
+    "crumbs": [
+      "Reference",
+      "Functions",
+      "get_r"
+    ]
+  },
+  {
+    "objectID": "reference/index.html#functions",
+    "href": "reference/index.html#functions",
+    "title": "Function reference",
+    "section": "",
+    "text": "Functions in ReportRabbit.\n\n\n\nget_accuracy\nCalculates the accuracy of predictions and returns the result.\n\n\nget_f1\nCalculates the F1 score of predictions and returns the result.\n\n\nget_precision\nCalculates the precision of predictions and returns the result.\n\n\nget_recall\nCalculates the recall of predictions and returns the result.\n\n\nget_mae\nCalculates the Mean Absolute Error (MAE) and returns the result.\n\n\nget_mape\nCalculates the Mean Absolute Percentage Error (MAPE) and returns the result.\n\n\nget_mse\nCompute Mean Squared Error (MSE).\n\n\nget_rmse\nCompute Root Mean Squared Error (RMSE).\n\n\nget_mse_rmse\nCompute Mean Squared Error (MSE) and Root Mean Squared Error (RMSE).\n\n\nget_r\nCalculates the Pearson correlation coefficient (R)\n\n\nget_r2\nCalculates the R^2 statistic (coefficient of determination)",
+    "crumbs": [
+      "Reference",
+      "Function reference"
+    ]
+  },
+  {
+    "objectID": "reference/get_mape.html",
+    "href": "reference/get_mape.html",
+    "title": "get_mape",
+    "section": "",
+    "text": "get_mape(y_true, y_pred)\nCalculates the Mean Absolute Percentage Error (MAPE) and returns the result.\nMAPE measures the average absolute percentage difference between the observed values and the predicted values.\nNote: MAPE is undefined if any element of y_true is equal to zero, due to division by zero in the MAPE formula.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ny_true\narray\nThe actual observed values (ground truth).\nrequired\n\n\ny_pred\narray\nThe model predicted values.\nrequired\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\nfloat\nThe calculated Mean Absolute Percentage Error (in percentage).\n\n\n\n\n\n\n&gt;&gt;&gt; y_true = [100.0, 200.0, 300.0]\n&gt;&gt;&gt; y_pred = [90.0, 210.0, 330.0]\n&gt;&gt;&gt; get_mape(y_true, y_pred)\n8.333333333333332",
+    "crumbs": [
+      "Reference",
+      "Functions",
+      "get_mape"
+    ]
+  },
+  {
+    "objectID": "reference/get_mape.html#parameters",
+    "href": "reference/get_mape.html#parameters",
+    "title": "get_mape",
+    "section": "",
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\ny_true\narray\nThe actual observed values (ground truth).\nrequired\n\n\ny_pred\narray\nThe model predicted values.\nrequired",
+    "crumbs": [
+      "Reference",
+      "Functions",
+      "get_mape"
+    ]
+  },
+  {
+    "objectID": "reference/get_mape.html#returns",
+    "href": "reference/get_mape.html#returns",
+    "title": "get_mape",
+    "section": "",
+    "text": "Name\nType\nDescription\n\n\n\n\n\nfloat\nThe calculated Mean Absolute Percentage Error (in percentage).",
+    "crumbs": [
+      "Reference",
+      "Functions",
+      "get_mape"
+    ]
+  },
+  {
+    "objectID": "reference/get_mape.html#examples",
+    "href": "reference/get_mape.html#examples",
+    "title": "get_mape",
+    "section": "",
+    "text": "&gt;&gt;&gt; y_true = [100.0, 200.0, 300.0]\n&gt;&gt;&gt; y_pred = [90.0, 210.0, 330.0]\n&gt;&gt;&gt; get_mape(y_true, y_pred)\n8.333333333333332",
+    "crumbs": [
+      "Reference",
+      "Functions",
+      "get_mape"
+    ]
+  },
+  {
+    "objectID": "reference/get_precision.html",
+    "href": "reference/get_precision.html",
+    "title": "get_precision",
+    "section": "",
+    "text": "get_precision(y_true, y_pred)\nCalculates the precision of predictions and returns the result. Precision is the proportion of positive predictions that were correct. It answers: “Of all the items we predicted as positive, how many were actually positive?” Precision = True Positives / (True Positives + False Positives).\nScoring is between 0 and 1 with a perfect precision being 1.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ny_true\narray\nThe actual observed values (ground truth).\nrequired\n\n\ny_pred\narray\nThe model predicted values.\nrequired\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\nfloat\nThe calculated precision score, ranging from 0.0 to 1.0.\n\n\n\n\n\n\n&gt;&gt;&gt; # Perfect precision\n&gt;&gt;&gt; y_true = [0, 1, 1, 0]\n&gt;&gt;&gt; y_pred = [0, 1, 1, 0]\n&gt;&gt;&gt; get_precision(y_true, y_pred)\n1.0\n&gt;&gt;&gt; # Partial precision\n&gt;&gt;&gt; y_true = [0, 1, 1, 0]\n&gt;&gt;&gt; y_pred = [0, 1, 0, 0]\n&gt;&gt;&gt; get_precision(y_true, y_pred)\n0.75",
+    "crumbs": [
+      "Reference",
+      "Functions",
+      "get_precision"
+    ]
+  },
+  {
+    "objectID": "reference/get_precision.html#parameters",
+    "href": "reference/get_precision.html#parameters",
+    "title": "get_precision",
+    "section": "",
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\ny_true\narray\nThe actual observed values (ground truth).\nrequired\n\n\ny_pred\narray\nThe model predicted values.\nrequired",
+    "crumbs": [
+      "Reference",
+      "Functions",
+      "get_precision"
+    ]
+  },
+  {
+    "objectID": "reference/get_precision.html#returns",
+    "href": "reference/get_precision.html#returns",
+    "title": "get_precision",
+    "section": "",
+    "text": "Name\nType\nDescription\n\n\n\n\n\nfloat\nThe calculated precision score, ranging from 0.0 to 1.0.",
+    "crumbs": [
+      "Reference",
+      "Functions",
+      "get_precision"
+    ]
+  },
+  {
+    "objectID": "reference/get_precision.html#examples",
+    "href": "reference/get_precision.html#examples",
+    "title": "get_precision",
+    "section": "",
+    "text": "&gt;&gt;&gt; # Perfect precision\n&gt;&gt;&gt; y_true = [0, 1, 1, 0]\n&gt;&gt;&gt; y_pred = [0, 1, 1, 0]\n&gt;&gt;&gt; get_precision(y_true, y_pred)\n1.0\n&gt;&gt;&gt; # Partial precision\n&gt;&gt;&gt; y_true = [0, 1, 1, 0]\n&gt;&gt;&gt; y_pred = [0, 1, 0, 0]\n&gt;&gt;&gt; get_precision(y_true, y_pred)\n0.75",
+    "crumbs": [
+      "Reference",
+      "Functions",
+      "get_precision"
     ]
   }
 ]

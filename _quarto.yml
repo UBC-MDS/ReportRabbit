@@ -1,6 +1,17 @@
 project:
   type: website
 
+website:
+  title: ReportRabbit
+  navbar:
+    background: primary
+    search: true
+    left:
+      - text: "Home"
+        href: index.qmd
+      - text: "Reference"
+        href: reference/index.qmd
+
 # tell quarto to read the generated sidebar
 metadata-files:
   - reference/_sidebar.yml
@@ -13,24 +24,26 @@ format:
 
 quartodoc:
   # the name used to import the package you want to create reference docs for
-  package: quartodoc
+  package: reportrabbit
 
   # write sidebar and style data
   sidebar: reference/_sidebar.yml
   css: reference/_styles-quartodoc.css
 
   sections:
-    - title: Some functions # title for the section
-      desc: Functions to inspect docstrings. # description for the section
+    - title: "Functions"
+      desc: Functions in ReportRabbit.
       contents:
         # the functions being documented in the package.
         # you can refer to anything: class methods, modules, etc..
-        - accuracy
-        - precision
-        - recall
-        - f1
-        - mae
-        - mape
-        - mse_rmse
-        - r
-        - r2
+        - "get_accuracy"
+        - "get_f1"
+        - "get_precision"
+        - "get_recall"
+        - "get_mae"
+        - "get_mape"
+        - "get_mse"
+        - "get_rmse"
+        - "get_mse_rmse"
+        - "get_r"
+        - "get_r2"

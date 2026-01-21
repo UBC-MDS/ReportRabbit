@@ -47,18 +47,18 @@ $ pip install reportrabbit
 # How to run unit tests
 From root directory, run all test files in terminal:
 
-```
+```bash
 pytest
 ```
 
 You also have the option to run individual test files by referencing its path. For example:
 
-```
+```bash
 pytest tests/unit/test_get_accuracy.py
 ```
 
 ## Documentation
-The documentation for ReportRabbit can be viewed here. # add in website link
+The documentation for ReportRabbit can be viewed [here](https://ubc-mds.github.io/reportrabbit/).
 
 ## Contributing
 

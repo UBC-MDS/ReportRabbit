@@ -35,11 +35,30 @@ It is an ideal package for students, analysts, and non-technical users who need 
 
 Raghav Gupta, Joel Peterson, Jennifer Tsang, and Ruth Adwowa Yankson
 
+## Set up environment
+
+
 ## Installation
 
 ``` bash
 $ pip install reportrabbit
 ```
+
+# How to run unit tests
+From root directory, run all test files in terminal:
+
+```
+pytest
+```
+
+You also have the option to run individual test files by referencing its path. For example:
+
+```
+pytest tests/unit/test_get_accuracy.py
+```
+
+## Documentation
+The documentation for ReportRabbit can be viewed here. # add in website link
 
 ## Contributing
 

@@ -37,11 +37,37 @@ Raghav Gupta, Joel Peterson, Jennifer Tsang, and Ruth Adwowa Yankson
 
 ## Set up environment
 
+Create the environment directly from `environment.yml`:
 
-## Installation
+```bash
+conda env create -f environment.yml
+conda activate reportrabbit
+```
+
+## Get started
+
+You can install this package into your preferred Python environment using pip:
 
 ``` bash
-$ pip install reportrabbit
+pip install git+https://github.com/UBC-MDS/reportrabbit.git
+
+```
+
+To use `reportrabbit` in your code:
+
+```python
+>>> from reportrabbit.accuracy import get_accuracy
+>>> get_accuracy(y_true, y_pred)
+```
+
+```python
+>>> import reportrabbit as rr
+>>> 
+>>> y_true = [0, 1, 1, 0]
+>>> y_pred = [0, 1, 0, 0]
+>>> accuracy = 0
+>>> 
+>>> accuracy = rr.get_accuracy(y_true, y_pred)
 ```
 
 # How to run unit tests
@@ -67,6 +93,7 @@ Check out the contributing guidelines [here](https://github.com/UBC-MDS/reportra
 Please note that this project is released with a [Code of Conduct](https://github.com/UBC-MDS/reportrabbit/blob/main/CONDUCT.md).
 By contributing to this project, you agree to abide by its terms.
 
-## License
+## Copyright
 
-It is licensed under the terms of the [MIT license](https://github.com/UBC-MDS/reportrabbit/blob/main/LICENSE).
+Copyright © 2026 Raghav Gupta, Joel Peterson, Jennifer Tsang, Ruth Adwowa Yankson.
+Free software distributed under the [MIT license](https://github.com/UBC-MDS/reportrabbit/blob/main/LICENSE).

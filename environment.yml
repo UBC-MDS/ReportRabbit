@@ -1,4 +1,4 @@
-name: dumbpy-env
+name: reportrabbit
 channels:
   - conda-forge
 dependencies:

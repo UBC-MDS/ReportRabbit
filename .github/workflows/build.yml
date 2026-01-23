@@ -35,8 +35,11 @@ jobs:
           python -m pip install --upgrade pip
           pip install -e ".[tests, dev]"
 
-      - name: Run pre-commit on staged files
-        run: pre-commit run
+      - name: Lint with Ruff
+        run: ruff check .
+
+      - name: Format check with Ruff
+        run: ruff format --check .
 
       - name: Run pytest with coverage for all metric functions
         run: pytest --cov 

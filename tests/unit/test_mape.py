@@ -59,7 +59,7 @@ def test_get_mape_rejects_inf_values():
 
 def test_get_mape_rejects_zero_in_y_true():
     """
-    Crucial for MAPE: Ensure error is raised if y_true contains 0.
+    Ensure error is raised if y_true contains 0.
     Division by zero makes MAPE mathematically undefined.
     """
     y_true = [0.0, 2.0, 3.0]

@@ -2,6 +2,7 @@
 Unit tests for get_mae().
 
 Note: these tests are written with the assistance of LLMs.
+
 """
 
 import numpy as np
@@ -10,6 +11,7 @@ import pytest
 from reportrabbit.mae import get_mae
 
 def test_get_mae_basic():
+    """ Test that MAE calculation is accurate"""
     y_true = [1, 2, 3]
     y_pred = [2, 2, 4]
     assert get_mae(y_true, y_pred) == pytest.approx(2 / 3)

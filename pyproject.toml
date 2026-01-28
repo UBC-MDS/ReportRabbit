@@ -4,7 +4,7 @@
 
 [build-system]
 build-backend = "hatchling.build"
-requires = ["hatchling"]
+requires = ["hatchling", "hatch-vcs"]
 
 ################################################################################
 # Project Configuration
@@ -89,6 +89,8 @@ packages = ["src/reportrabbit"]
 source = "vcs"
 raw-options = { version_scheme = "no-guess-dev", local_scheme = "no-local-version" }
 
+[tool.hatch.build.hooks.vcs]
+version-file = "src/reportrabbit/__version__.py"
 
 ######## Configure pytest for your test suite ########
 [tool.pytest.ini_options]

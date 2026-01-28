@@ -5,11 +5,12 @@ This module exposes the primary user-facing functions at the top level.
 """
 
 from __future__ import annotations
+from .__version__ import __version__
 
 # read version from installed package
 from importlib.metadata import version
 
-__version__ = version("reportrabbit")
+# __version__ = version("reportrabbit")
 
 # Metrics (public API)
 from .accuracy import get_accuracy

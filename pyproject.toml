@@ -13,9 +13,10 @@ requires = ["hatchling"]
 [project]
 name = "reportrabbit"
 # You can chose to use dynamic versioning with hatch or static where you add it manually.
-version = "0.1.0"
+# version = "0.1.0"
+dynamic = ["version"]
 
-description = "ReportRabbit is a diagnostic utility that automates the generation of performance metrics, visualization dashboards, and SHAP-based interpretations to turn raw model outputs into comprehensive evaluation reports."
+description = "ReportRabbit is a diagnostic utility that automates the generation of performance metrics to turn raw model outputs into comprehensive evaluation reports."
 authors = [
     { name = "Jennifer Tsang", email = "jennifer.tsang8919@gmail.com" },
 ]

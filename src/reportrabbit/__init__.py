@@ -25,7 +25,6 @@ from .r import get_r
 from .r2 import get_r2
 
 __all__ = [
-    "__version__",
     "get_accuracy",
     "get_f1",
     "get_precision",

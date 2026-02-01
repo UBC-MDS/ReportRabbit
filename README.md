@@ -83,13 +83,8 @@ Create the environment directly from `environment.yml`:
 conda env create -f environment.yml
 conda activate reportrabbit
 
+# Install the package in editable mode with all developer dependencies
 pip install -e ".[dev,tests,docs]"
-
-pytest
-pytest --cov=reportrabbit --cov-report=term-missing --cov-branch
-
-quartodoc build
-quarto preview
 ```
 
 ### How to run unit tests
@@ -102,6 +97,10 @@ You also have the option to run individual test files by referencing its path. F
 
 ```bash
 pytest tests/unit/test_get_accuracy.py
+```
+To check code coverage and branch details:
+```bash
+pytest --cov=reportrabbit --cov-report=term-missing --cov-branch
 ```
 
 ## Documentation

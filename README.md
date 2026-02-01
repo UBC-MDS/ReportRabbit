@@ -102,9 +102,15 @@ To check code coverage and branch details:
 ```bash
 pytest --cov=reportrabbit --cov-report=term-missing --cov-branch
 ```
+### Local Documentation Development
 
+```bash
+quartodoc build --watch
+quarto preview
+```
 ## Documentation
-The documentation for ReportRabbit can be viewed [here](https://ubc-mds.github.io/reportrabbit/).
+- The documentation for ReportRabbit can be viewed [here](https://ubc-mds.github.io/reportrabbit/).
+- The package project page and release history are available on [TestPyPI](https://test.pypi.org/project/reportrabbit/).
 
 ## Contributing
 

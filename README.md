@@ -35,22 +35,23 @@ All functions require two primary inputs: `y_true` (actual observed values) and 
 
 Raghav Gupta, Joel Peterson, Jennifer Tsang, and Ruth Adwowa Yankson
 
-## Set up environment
-
-Create the environment directly from `environment.yml`:
-
-```bash
-conda env create -f environment.yml
-conda activate reportrabbit
-```
-
 ## Get started
 
-You can install this package into your preferred Python environment using pip:
+### Install from TestPyPI
+
+You can install the latest pre-release version of **ReportRabbit** from TestPyPI.
+This version is intended for testing and validation before the official PyPI release.
+
+```bash
+pip install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple reportrabbit
+```
+
+### Install from GitHub (development version)
+
+If you prefer installing directly from the source repository:
 
 ``` bash
 pip install git+https://github.com/UBC-MDS/reportrabbit.git
-
 ```
 
 To use `reportrabbit` in your code:
@@ -69,21 +70,47 @@ To use `reportrabbit` in your code:
 >>> accuracy = rr.get_accuracy(y_true, y_pred)
 ```
 
-# How to run unit tests
+## Developer Guide
+
+The following instructions are intended for developers and contributors
+who want to run tests, build documentation, or contribute to the package.
+
+### Set up development environment
+
+Create the environment directly from `environment.yml`:
+
+```bash
+conda env create -f environment.yml
+conda activate reportrabbit
+
+# Install the package in editable mode with all developer dependencies
+pip install -e ".[dev,tests,docs]"
+```
+
+### How to run unit tests
 From root directory, run all test files in terminal:
 
 ```bash
 pytest
 ```
-
 You also have the option to run individual test files by referencing its path. For example:
 
 ```bash
 pytest tests/unit/test_get_accuracy.py
 ```
+To check code coverage and branch details:
+```bash
+pytest --cov=reportrabbit --cov-report=term-missing --cov-branch
+```
+### Local Documentation Development
 
+```bash
+quartodoc build --watch
+quarto preview
+```
 ## Documentation
-The documentation for ReportRabbit can be viewed [here](https://ubc-mds.github.io/reportrabbit/).
+- The documentation for ReportRabbit can be viewed [here](https://ubc-mds.github.io/reportrabbit/).
+- The package project page and release history are available on [TestPyPI](https://test.pypi.org/project/reportrabbit/).
 
 ## Contributing
 
